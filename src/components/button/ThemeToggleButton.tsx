@@ -5,12 +5,12 @@ const ThemeToggleButton = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      onClick={() => toggleTheme()}
-    >
-      {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
-    </button>
+    <i
+      className={`ml-2 cursor-pointer bi bi-moon-fill text-sm  ${
+        theme != "dark" ? "color-black" : "color-white"
+      }`}
+      onClick={toggleTheme}
+    />
   );
 };
 

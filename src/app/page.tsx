@@ -1,11 +1,9 @@
-import ThemeToggleButton from "@/components/button/ThemeToggleButton";
-
 export default function Home() {
   return (
-    <div className="flex flex-col w-40">
-      <span className="">Homepage</span>
-
-      <ThemeToggleButton />
+    <div className="w-full page">
+      <div className="max-w-[90vw] mx-auto">
+        <span className="">Homepage</span>
+      </div>
     </div>
   );
 }

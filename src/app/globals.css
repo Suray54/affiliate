@@ -3,21 +3,93 @@
 @tailwind utilities;
 
 :root {
-  --text-color: 0, 0, 0;
-  --background-color: grey;
-
-  /* --primary-color: blue;
-  --secondary-color: red; */
+  --text-color: #000;
+  --background-color: rgb(245, 245, 245);
+  --navbar-background-color: rgb(211, 211, 211);
 }
 
 .dark {
-  --text-color: 255, 255, 255;
-  --background-color: black;
+  --text-color: #fff;
+  --background-color: rgb(0, 0, 0);
+  --navbar-background-color: rgb(71, 71, 71);
 }
 
 body {
-  color: rgb(var(--text-color));
+  color: var(--text-color);
   background: var(--background-color);
-  margin: 0;
-  padding: 0;
+}
+
+.page {
+  /* margin-top: 128px; only when navbar is fixed*/
+  margin-top: 30px;
+  min-height: 100vh;
+}
+
+/* Navigation bar */
+
+.navbar {
+  background-color: var(--navbar-background-color);
+}
+
+.close-menu,
+.open-menu {
+  position: absolute;
+  cursor: pointer;
+  display: none;
+}
+
+.open-menu {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.close-menu {
+  top: 20px;
+  right: 20px;
+}
+
+#check {
+  display: none;
+}
+
+.menu li {
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+@media (max-width: 800px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 73%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 100;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 1s ease-in-out;
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+
+  .menu li {
+    margin-top: 40px;
+  }
+
+  .menu li a {
+    padding: 10px;
+  }
+
+  .close-menu,
+  .open-menu {
+    display: block;
+  }
+
+  #check:checked ~ .menu {
+    right: 0;
+  }
 }

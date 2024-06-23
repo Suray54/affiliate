@@ -8,6 +8,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Loading from "./loading";
 import { ThemeProvider } from "@/context/themeContext";
 import Navbar from "@/components/layouts/navbar/navbar";
+import Footer from "@/components/layouts/footer/footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
           <Suspense fallback={<Loading />}>
             <Navbar />
             {children}
+            <Footer />
           </Suspense>
         </body>
       </html>

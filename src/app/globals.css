@@ -4,6 +4,7 @@
 
 :root {
   --text-color: #000;
+  --text-red: red;
   --background-color: rgb(245, 245, 245);
   --navbar-background-color: rgb(211, 211, 211);
 }
